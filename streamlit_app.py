@@ -463,11 +463,25 @@ with tab3:
             yaxis_title="Price Index (2011 = 100)",
             hovermode='x',
             font=dict(size=14),
-            xaxis=dict(range=[index_start_year, index_end_year])
+            xaxis=dict(range=[index_start_year, index_end_year]),
+            showlegend=True,
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="center",
+                x=0.5
+            )
         )
         
-        # Customize line color and add markers
-        fig3.update_traces(line_color='#E74C3C', line_width=3, mode='lines+markers', marker_size=4)
+        # Customize line color, add markers, and set legend name
+        fig3.update_traces(
+            line_color='#E74C3C', 
+            line_width=3, 
+            mode='lines+markers', 
+            marker_size=4,
+            name='National Price Index'
+        )
         
         st.plotly_chart(fig3, use_container_width=True)
         
